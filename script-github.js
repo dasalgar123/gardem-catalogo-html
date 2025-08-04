@@ -78,7 +78,7 @@ const productos = [
         descripcion: "Boxer Calvin Klein original",
         precio: 5000,
         categoria: "caballero",
-        imagen: "https://raw.githubusercontent.com/dasalgar123/gardem-catalogo-html/main/img/Caballeros/calvin-klein-4634-5882962-1-catalog-new.webp",
+        imagen: "./public//img/Caballeros/calvin-klein-4634-5882962-1-catalog-new.webp",
         colores: ["Azul", "Rojo", "Verde", "Negro"]
     },
     {
@@ -809,4 +809,5 @@ function crearMensajeWhatsApp(pedido) {
     mensaje += `¡Gracias por tu compra! `;
     
     return mensaje;
+
 } 
