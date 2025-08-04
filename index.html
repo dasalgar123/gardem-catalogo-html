@@ -14,102 +14,98 @@
             <div class="nav-logo" onclick="resetFilters()">
                 <h2>GARDEM</h2>
             </div>
-            <div class="nav-cart" onclick="toggleCart()">
-                <span class="cart-icon">🛒</span>
-                <span class="cart-count" id="cartCount">0</span>
-            </div>
+           
         </div>
     </nav>
 
-    <!-- Banner de promociones -->
+    <!-- Banner de Promociones -->
     <div class="promociones-banner">
-        <div class="promocion-text" id="promocionText">
-            ¡Envíos gratis a todo el país!
+        <div class="carrusel-container">
+            <div class="carrusel-promociones">
+                <div class="promocion-activa" id="promocionText">
+                    ¡Envíos gratis a todo el país
+                </div>
+            </div>
         </div>
     </div>
 
     <!-- Filtros -->
-    <div class="filtros-container">
-        <div class="filtros-buttons">
+    <div class="filtros">
+        <div class="filtro-categorias">
             <button class="filtro-btn activo" onclick="filterByCategory('todos')">Todos</button>
-            <button class="filtro-btn" onclick="filterByCategory('caballero')">Caballeros</button>
-            <button class="filtro-btn" onclick="filterByCategory('dama')">Damas</button>
-            <button class="filtro-btn" onclick="filterByCategory('nino')">Niños</button>
+            <button class="filtro-btn" onclick="filterByCategory('caballero')">Caballero</button>
+            <button class="filtro-btn" onclick="filterByCategory('dama')">Dama</button>
+            <button class="filtro-btn" onclick="filterByCategory('nino')">Niño</button>
             <button class="filtro-btn" onclick="filterByCategory('ninas')">Niñas</button>
             <button class="filtro-btn" onclick="filterByCategory('unisex')">Unisex</button>
         </div>
-        <div class="search-container">
-            <input type="text" id="searchInput" placeholder="Buscar productos..." oninput="filterProducts()">
-        </div>
     </div>
 
-    <!-- Grid de productos -->
+    <!-- Grid de Productos -->
     <div class="productos-grid" id="productosGrid">
         <!-- Los productos se cargarán dinámicamente -->
     </div>
 
-    <!-- Carrito flotante -->
+    <!-- Carrito Flotante -->
     <div class="carrito-flotante" onclick="toggleCart()">
-        <span class="cart-icon">🛒</span>
-        <span class="cart-count" id="floatingCartCount">0</span>
+        <span class="carrito-icono">🛒</span>
+        <span class="carrito-contador" id="floatingCartCount">0</span>
     </div>
 
-    <!-- Carrito desplegable -->
-    <div class="carrito-dropdown" id="carrito">
-        <div class="carrito-header">
-            <h3>🛒 Cesta de Pedidos</h3>
-            <button class="close-btn" onclick="toggleCart()">×</button>
-        </div>
-        <div class="carrito-items" id="carritoItems">
-            <p>La cesta de pedidos está vacía</p>
+    <!-- Carrito Desplegable -->
+    <div class="carrito" id="carrito">
+        <h3>🛒 Cesta de Pedidos</h3>
+        <div id="carritoItems">
+            <p>El carrito está vacío</p>
         </div>
         <div class="carrito-total" id="carritoTotal" style="display: none;">
             <strong>Total: $<span id="totalAmount">0</span></strong>
         </div>
-        <button class="btn-completar" id="btnCompletar" onclick="completarPedido()" style="display: none;">
-            Completar Pedido
+        <button class="btn-whatsapp" onclick="completarPedido()" id="btnCompletar" style="display: none;">
+        Completar Pedido
         </button>
     </div>
 
-    <!-- Modal de checkout -->
+    <!-- Modal de Checkout -->
     <div class="modal" id="checkoutModal">
         <div class="modal-content">
-            <div class="modal-header">
-                <h3>Completar Pedido</h3>
-                <button class="close-btn" onclick="closeCheckout()">×</button>
-            </div>
+            <span class="close" onclick="closeCheckout()">&times;</span>
+            <h2>📋 Completar Pedido</h2>
             <form id="checkoutForm">
                 <div class="form-group">
-                    <label for="nombre">Nombre completo:</label>
-                    <input type="text" id="nombre" name="nombre" required>
+                    <label for="nombre">Nombre Completo:</label>
+                    <input type="text" id="nombre" required>
                 </div>
                 <div class="form-group">
                     <label for="telefono">Teléfono:</label>
-                    <input type="tel" id="telefono" name="telefono" required>
+                    <input type="tel" id="telefono" required>
                 </div>
                 <div class="form-group">
-                    <label for="direccion">Dirección:</label>
-                    <input type="text" id="direccion" name="direccion" required>
+                    <label for="direccion">Dirección de Envío:</label>
+                    <input type="text" id="direccion" required>
                 </div>
                 <div class="form-group">
                     <label for="ciudad">Ciudad:</label>
-                    <input type="text" id="ciudad" name="ciudad" required>
+                    <input type="text" id="ciudad" required>
                 </div>
                 <div class="form-group">
-                    <label for="metodoPago">Método de pago:</label>
-                    <select id="metodoPago" name="metodoPago" required>
-                        <option value="">Seleccionar método de pago</option>
-                        <option value="Efectivo">Efectivo</option>
-                        <option value="Transferencia">Transferencia</option>
-                        <option value="Nequi">Nequi</option>
-                        <option value="Daviplata">Daviplata</option>
+                    <label for="metodoPago">Método de Pago:</label>
+                    <select id="metodoPago" required>
+                        <option value="">Seleccionar método</option>
+                        <option value="efectivo">Efectivo contra entrega</option>
+                        <option value="transferencia">Transferencia bancaria</option>
+                        <option value="nequi">Nequi</option>
+                        <option value="daviplata">Daviplata</option>
                     </select>
                 </div>
-                <button type="submit" class="btn-enviar">Enviar Pedido</button>
+                <div class="botones-formulario">
+                    <button type="button" class="btn-cancelar" onclick="closeCheckout()">❌ Cancelar</button>
+                    <button type="submit" class="btn-enviar">✅ Enviar Pedido</button>
+                </div>
             </form>
         </div>
     </div>
 
-    <script src="script-github.js"></script>
+    <script src="script.js"></script>
 </body>
 </html> 
