@@ -1,5 +1,6 @@
-# Imágenes (no subir al repositorio)
-img/
+# Archivos del sistema
+.DS_Store
+Thumbs.db
 
 # Archivos del sistema
 .DS_Store

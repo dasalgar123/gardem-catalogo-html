@@ -15,16 +15,20 @@ Catálogo de ropa interior GARDEM desarrollado en HTML, CSS y JavaScript.
 
 ```
 html-catalogo/
-├── index.html          # Página principal
-├── styles.css          # Estilos CSS
-├── script.js           # Funcionalidad JavaScript
-├── img/               # Imágenes de productos
+├── index.html              # Página principal (para local/Netlify)
+├── index-github.html       # Página para GitHub (con URLs completas)
+├── styles.css              # Estilos CSS
+├── script.js               # Funcionalidad JavaScript (rutas relativas)
+├── script-github.js        # Funcionalidad JavaScript (URLs GitHub)
+├── img/                   # Imágenes de productos
 │   ├── Caballeros/
 │   ├── Damas/
 │   ├── Niños/
 │   ├── Niñas/
 │   └── Unixes/
-└── README.md          # Este archivo
+├── netlify.toml           # Configuración para Netlify
+├── .gitignore             # Archivos a ignorar en Git
+└── README.md              # Este archivo
 ```
 
 ## Tecnologías Utilizadas
@@ -36,9 +40,15 @@ html-catalogo/
 
 ## Instalación
 
+### Para uso local o Netlify:
 1. Clona el repositorio
 2. Abre `index.html` en tu navegador
 3. ¡Listo para usar!
+
+### Para GitHub Pages:
+1. Abre `index-github.html` directamente desde GitHub
+2. Las imágenes se cargarán desde GitHub Raw
+3. Funciona sin servidor web
 
 ## Despliegue en Netlify
 
