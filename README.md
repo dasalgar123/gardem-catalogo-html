@@ -40,6 +40,20 @@ html-catalogo/
 2. Abre `index.html` en tu navegador
 3. ¡Listo para usar!
 
+## Despliegue en Netlify
+
+1. Conecta tu repositorio de GitHub a Netlify
+2. Las imágenes deben estar en la carpeta `img/` con la estructura:
+   ```
+   img/
+   ├── Caballeros/
+   ├── Damas/
+   ├── Niños/
+   ├── Niñas/
+   └── Unixes/
+   ```
+3. Netlify automáticamente servirá los archivos estáticos
+
 ## Funcionalidades
 
 - **Filtros**: Filtra productos por categoría
